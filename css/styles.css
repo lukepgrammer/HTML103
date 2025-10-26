@@ -1,0 +1,886 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Espaçamento modular teste */
+/* Achei bem impraticável, mas já que a atividade pede 
+   talvez não seja um uso 100% adequado ainda, mas estou me guiando
+   pela atividade
+*/
+
+:root {
+  /* Cores neutras */
+  --color-white: #ffffff;
+  --color-neutral-light: #d8e3f0; /* cor de fundo dos containers */
+  --color-neutral-mid: #4f86c5; /* borda padrão dos elementos */
+  --color-neutral-dark: #194f85; /* Textos e legendas escuras */
+  /* ---------------------------------------------------------------------*/
+
+  /* Cores primarias da ONG */
+  --color-primary: #559dfa; /* Links e botões, cor principal */
+  --color-primary-light: #71a4f7; /* Titulos e fundos */
+  --color-primary-dark: #2266a7; /* Barra de navegação */
+
+  /*-----------------------------------------------------------------------*/
+
+  /* Cores secundárias */
+
+  --color-secondary: rgb(86, 142, 277); /* highlight texto */
+  --color-alert: #d64545; /* Input inválido no campo do formulário */
+  --color-border-hover: rgb(137, 146, 152); /* bordas ao usar o hover */
+  --color-secondary-alt: rgb(25, 115, 233); /* nav background */
+  /*-----------------------------------------------------------------------*/
+
+  /* 4 point grid system be like 
+     Segundo o que eu ainda pesquisando, a medida em rem é mais moderna e melhor para responsividade das páginas 
+     */
+
+  --space-1: 0.5rem; /* 8 px */
+  --space-2: 1rem; /* 16px */
+  --space-3: 1.5rem; /* 24px */
+  --space-4: 2rem; /* 32px */
+  --space-5: 3rem; /* 48px */
+  --space-6: 4rem; /* 64px */
+
+  /* Tamanhos padrão das fontes */
+  --font-padrao-peq: 1rem; /* 16px */
+  --font-padrao-peq2: 1.125rem; /* 18px */
+  --font-padrao-med: 1.25rem; /* 20px */
+  --font-padrao-gra: 1.5rem; /* 24px */
+  --font-padrao-giga: 2rem; /* 32px */
+}
+
+
+/* 
+============================================
+SISTEMA DE GRID
+
+Ficou super torto isso, não vou usar
+============================================
+*/
+
+/* Container index - página principal 
+/* Elementos sections maiores como o texto e footer principal
+/*
+*/
+
+/* .container-index {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-4);
+}
+
+/* Linha row - substitui as divs internas quando for dividir as colunas */
+/* .row-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+} */
+
+
+/* Colunas base */
+/* [class^="col-"]{
+  padding: var(--space-2);
+  flex: 0 0 auto;
+} */
+
+/* 12 colunas
+  .col-1 { width: 8.33%; }
+  .col-2 { width: 16.66%; }
+  .col-3 { width: 25%; }
+  .col-4 { width: 33.33%; }
+  .col-5 { width: 41.66%; }
+  .col-6 { width: 50%; }
+  .col-7 { width: 58.33%; }
+  .col-8 { width: 66.66%; }
+  .col-9 { width: 75%; }
+  .col-10 { width: 83.33%; }
+  .col-11 { width: 91.66%; }
+  .col-12 { width: 100%; } */
+
+
+/* Links e imagem layout */
+
+section img {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 800px; /* definir uma largura min-max para as imagens melhora o enquadramento em telas mobile */
+  height: auto;
+  border-radius: var(--space-1);
+  /* bordas arredondadas, não sei, fica mais apresentável */
+}
+
+#texto-principal {
+  display: block;
+  margin: var(--space-4) auto;
+  max-width: 60ch;
+  padding: var(--space4);
+  color: #1a1a1a;
+  font-size: var(--font-padrao-gra);
+  font-family: "Segoi UI", sans-serif;
+  border: 1px solid rgb(255, 255, 255, 0.3);
+  border-radius: var(--space-2);
+  background-color: rgba(255, 255, 255, 0.25);
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+picture img,
+picture source {
+  display: block;
+  margin: var(--space-2) auto;
+  margin-bottom: var(--space-1);
+  border-radius: var(--space-1);
+  width: 90%;
+  max-width: 800px;
+}
+a {
+  text-decoration: none;
+}
+
+/* Esconder menu hamburguer no PC */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  position: absolute;
+  padding: 0;
+  top: 24px;
+  right: 24px;
+  z-index: 100;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+
+
+
+
+/* Responsividade media-queries - Breakpoints */
+
+
+/* Celulares */
+
+@media (max-width: 600px) {
+  body {
+    font-size: var(--font-padrao-peq); /* 16px */
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    padding: var(--space-2);
+  }
+ 
+  /* Menu Hamburguer aplicado somente as telas mobile */
+
+  /* Só queria deixar registrado que quebrei muito a cabeça
+    pra tudo encaixar certinho, principalmente a parte que esconde o menu */
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: white;
+    z-index: 50;
+    font-size: 1.9rem;
+  }
+/* Menu escondido */
+  .nav-links ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 99;
+    background-color: var(--color-secondary-alt);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+/* Menu ativo, mostrando as páginas */
+  .nav-links ul.show {
+    display: flex;
+  }
+
+  .nav-links ul li {
+    width: 100%;
+    margin: 0;
+  }
+
+  .nav-links ul li a {
+    display: block;
+    width: 100%;
+    color: var(--color-white);
+    font-weight: 600;
+    text-align: center;
+    padding: 16px 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links ul li:last-child a {
+    border-bottom: none;
+  }
+
+
+  /* hover da lista no celular */
+  .nav-links ul li a:active,
+  .nav-links ul li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+
+
+  /* Enquadramento do titulo Voluntários - ONG ELdermaxxing no celular */
+  legend {
+    text-align: center;
+    display: block;
+    font-weight: bold;
+    font-size: var(--font-padrao-med);
+    color: var(--color-neutral-dark);
+    margin: 0 auto 1rem auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #texto-principal {
+    padding: var(--space-3);
+    font-size: var(--font-padrao-med);
+    max-width: 90%;
+  }
+
+
+  /* Cards de projeto */
+
+  .cartao-projeto-principal {
+    width: 95%;
+    padding: var(--space-3);
+    margin: var(--space-2) auto;
+  }
+
+  .cartao-projeto-principal > p:first-of-type {
+    padding: 0 var(--space-1);
+    margin-bottom: var(--space-3);
+    font-size: var(--font-padrao-peq2);
+    max-width: 60ch;
+  }
+
+
+  .projetos-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+    padding: 0;
+  }
+
+  .cartao-projeto {
+    padding: var(--space-2);
+    width: 100%;
+    margin: 0;
+  }
+
+  .cartao-projeto .Cartão-subtitulo {
+    font-size: var(--font-padrao-peq2);
+    padding: 0 var(--space-1);
+    margin: 0 0 var(--space-2) 0;
+    width: 100%;
+    display: block;
+    overflow-wrap: break-word;
+  }
+
+  .cartao-projeto .Cartão-texto {
+    padding: 0 var(--space-1);
+    font-size: var(--font-padrao-peq);
+    width: 100%;
+  }
+
+  /* Cards página de teste */
+
+  .Cartão {
+    width: 95%;
+    padding: var(--space-3);
+    margin: var(--space-2) auto;
+  }
+
+  .Cartão > p:first-of-type {
+    padding: 0 var(--space-1);
+    margin-bottom: var(--space-3);
+    font-size: var(--font-padrao-peq2);
+  }
+
+
+
+  .Cartão-texto {
+    max-width: 70%;
+  }
+
+
+  section img,
+  picture img,
+  picture source {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Celulares com telas maiores */
+@media (min-width: 601px) and (max-width: 768px) {
+  body {
+    font-size: var(--font-padrao-peq2); /* 18px */
+  }
+
+  h1 {
+    font-size: var(--font-padrao-gra); /* 24px */
+    padding: var(--space-2);
+  }
+
+  nav ul {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  #texto-principal {
+    max-width: 90%;
+    font-size: var(--font-padrao-gra);
+    padding: var(--space-3);
+  }
+
+  .projetos-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards por linha */
+    gap: var(--space-2);
+  }
+
+  .cartao-projeto {
+    padding: var(--space-2);
+  }
+
+  section img,
+  picture img,
+  picture source {
+    width: 95%;
+    max-width: 700px;
+  }
+}
+
+/* Tablets -- Alguém usa isso em pleno século 2025? LOL*/
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  h1 {
+    font-size: var(--font-padrao-gra); /* 24px */
+  }
+
+  nav ul {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  #texto-principal {
+    max-width: 80%;
+    font-size: var(--font-padrao-gra);
+    padding: var(--space-4);
+  }
+
+
+  .Cartão {
+    width: 80%;
+    font-size: var(--font-padrao-med);
+  }
+
+  section img,
+  picture img,
+  picture source {
+    width: 95%;
+  }
+}
+
+/* PCs e Desktops*/
+
+@media (min-width: 1025px) {
+  h1 {
+    font-size: var(--font-padrao-giga); /* 32px */
+  }
+
+  #texto-principal {
+    max-width: 60ch;
+    font-size: var(--font-padrao-gra);
+  }
+
+
+  .Cartão {
+    width: 600px;
+    font-size: var(--font-padrao-gra);
+  }
+
+  section img,
+  picture img,
+  picture source {
+    max-width: 800px;
+  }
+}
+
+
+/* PCs e Desktop grandes (1440px >)*/
+
+@media (min-width: 1440px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  #texto-principal {
+    max-width: 70ch; /* mais largo para aproveitar espaço */
+    font-size: var(--font-padrao-giga);
+  }
+
+  .projetos-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards por linha */
+    gap: var(--space-4);
+  }
+
+  .cartao-projeto-principal {
+    width: 1200px;
+    padding: var(--space-5);
+  }
+
+  section img,
+  picture img,
+  picture source {
+    max-width: 1000px;
+  }
+}
+
+
+/* Efeito hoover limitado ao menu, antes afetava globalmente qualquer elemento <a> da página */
+nav a:hover {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border-radius: 4px;
+  padding: var(--space-2);
+}
+
+/* Barra de navegação */
+
+.frase-legal {
+  display: block;
+  font-style: italic;
+  color: black;
+  padding: 0.5rem;
+  margin: 0;
+  font-size: var(--font-padrao-med);
+}
+
+nav {
+  padding: 1rem;
+  background: var(--color-secondary-alt);
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: white;
+}
+
+h1 {
+  /* Não sei o que eu fiz aqui, mas consegui deixar o "logo" e a frase encaixados certinhos */
+  background: var(--color-secondary-alt);
+  color: white;
+  font-size: var(--font-padrao-giga);
+  padding: var(--space-2);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+mark {
+  background: var(--color-secondary);
+}
+
+mark:hover {
+  /* 
+    Efeito ao passar o mouse sobre a frase destacada
+    Não tive razão nenhuma pra fazer isso, só queria praticar o hover mesmo.
+    */
+  color: white;
+  cursor: pointer;
+}
+
+
+
+.rodape {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.rodape button {
+  display: flex;
+  flex-direction: row;
+  margin: var(--space-4) auto;
+  padding: var(--space-3);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+}
+
+.rodape button:hover {
+  background-color: var(--color-neutral-dark);
+  border: 2px solid rgb(137, 146, 152);
+  border-radius: var(--space-1);
+  cursor: pointer;
+}
+
+/* Formulário layout */
+form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: var(--space-3);
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+fieldset {
+  border: none;
+  padding: auto;
+  margin: auto;
+  margin-right: 20px;
+}
+
+legend {
+  margin: auto;
+  font-size: var(--font-padrao-med);
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: var(--color-neutral-dark);
+}
+
+label {
+  display: block;
+  margin: var(--space-1) 0;
+  /* font-weight: 600; Letras da label ficam com efeito bold */
+  font-size: var(--font-padrao-peq2);
+}
+
+/* Campos do formulário yeee */
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: var(--space-2); /* Espaço das caixas */
+  border: 2px solid var(--color-neutral-mid);
+  border-radius: var(--space-1);
+  font-size: var(--font-padrao-peq);
+  margin-bottom: var(--space-2);
+}
+/* Foco ao clicar em um dos campos */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--color-neutral-dark);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(34, 102, 167, 0.12); /* sombra suave ao selecionar */
+}
+
+input:invalid {
+  border-color: var(--color-alert);
+  box-shadow: 0 0 0 4px rgb(183, 36, 29, 0.12);
+}
+
+button[type="submit"],
+button[type="reset"] {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background: var(--color-primary-dark);
+  color: white;
+}
+
+button[type="reset"] {
+  background: #f0f2f5;
+}
+
+/* Impede o usuário de alterar as dimensões da caixinha de sugestões */
+#sugestao {
+  resize: none;
+}
+
+/* Divisão dos cartões de projetos.html e teste.html */
+
+/* Cartão de projetos -> projetos.html */
+
+
+/* Container grid */
+.projetos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+/* Estilo para os cards da área de projetos */
+
+/* Container principal da area de projetos -> projetos.html */
+.cartao-projeto-principal {
+  border: 4px solid var(--color-primary-light);
+  border-radius: var(--space-2);
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  background: rgba(0,0,0, 0.9);
+  color: var(--color-white);
+  padding: var(--space-4); /* Texto não gruda mais nas bordas */
+}
+
+
+.cartao-projeto-principal:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  border-color: var(--color-primary-dark);
+  cursor: pointer;
+
+}
+
+
+
+/* Texto introdutório do cartão */
+
+.cartao-projeto-principal > p:first-of-type {
+  max-width: 60ch; /* limite de 60 caracteres */
+  margin: 0 auto var(--space-4) auto;
+  padding: 0 var(--space-2); /* padding horizontal */
+  font-size: var(--font-padrao-med);
+  line-height: 1.6;
+  text-align: center;
+}
+
+.cartao-projeto {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-primary-light);
+  border-radius: var(--space-2);
+  padding: var(--space-3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+
+}
+
+.cartao-projeto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0, 0.3);
+  border-color: var(--color-alert);
+  cursor: pointer;
+}
+
+/* Subtitulo dentro dos cards */
+.cartao-projeto .Cartão-subtitulo {
+  background: none;
+  border-bottom: 2px solid var(--color-border-hover);
+  padding: 0 var(--space-1) var(--space-1) var(--space-1);
+  margin: 0 0 var(--space-2) 0;
+  font-size: var(--font-padrao-med);
+  text-align: left;
+  width: auto;
+  display: block;
+  max-width: 100%;
+  overflow-wrap: break-word; /* Quebra de palavras */
+}
+
+/* Texto dentro dos cards */
+.cartao-projeto .Cartão-texto {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 0 var(--space-1);
+  line-height: 1.6;
+  font-size: var(--font-padrao-peq);
+}
+
+/* Cartão da área de testes -> teste.html */
+/* Apesar de repetir a mesma classe com configurações diferentes
+/* o cartão da área de testes quebra se eu remover essa configuração abaixo
+/* ainda não entendi o porquê, então vou deixar aqui
+*/
+.Cartão {
+  border: 4px solid var(--color-primary-light);
+  border-radius: var(--space-1);
+  margin: 0 auto 0;
+  width: 95%; /* width em pixels aparentemente quebra o layout no celular */
+  max-width: 600px;
+  background: black;
+  color: white;
+}
+
+.Cartão-titulo {
+  font-size: var(--font-padrao-peq2);
+  text-transform: uppercase;
+  font-weight: 300px;
+  margin: 0 auto;
+  padding: var(--space-1);
+  letter-spacing: 2.5px;
+  color: #808080;
+}
+.Cartão-subtitulo {
+  display: flex;
+  margin: 0 auto;
+  padding: 2px;
+  background: none;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: var(--color-white);
+}
+
+.Cartão-texto {
+  display: block;
+  margin: 0 auto;
+  color: var(--color-white);
+  padding: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 60ch;
+}
+
+.Cartão-botão {
+  display: flex;
+  margin: 0 auto;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--space-1);
+  margin-bottom: var(--space-2);
+  cursor: pointer;
+  border: none;
+  background: none;
+  background-color: var(--color-neutral-mid);
+  font-size: var(--font-padrao-peq);
+
+  color: inherit; /* O elemento herda a cor do elemento mais próximo */
+  /* No caso, o paragráfo */
+}
+
+.Cartão-botão a {
+  border: none;
+  text-decoration: none;
+  color: var(--color-white);
+  border-color: none;
+}
+
+.Cartão-botão a:hover {
+  border: none;
+  border-radius: none;
+}
+
+/*
+Menu Hamburguer final boss - tamanho consistente das barrinhas em TODAS as páginas
+
+a tag !important garante que as regras sejam priorizadas acima de tudo
+*/
+
+.navbar .menu-toggle {
+  display: none;
+  font-size: 1.9rem !important;
+  width: 32px !important;
+  height: 32px !important;
+  text-align: center !important;
+  line-height: 1 !important;
+}
+
+@media (max-width: 600px){
+  .navbar .menu-toggle {
+    display: block !important;
+    top: 12px !important;
+    right: 16px !important;
+    font-size: 1.9rem !important;
+  }
+}
+
+/* Footer maxxing - Estilizado igual o header */
+#footer-principal,
+#footer-cadastro,
+.rodape {
+  background: var(--color-secondary-alt);
+  color: var(--color-white);
+  padding: var(--space-4);
+  text-align: center;
+  margin-top: var(--space-5);
+  border-radius: 8px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+/* Titulos dos footers */
+#footer-principal h3,
+#footer-cadastro h3 {
+  color: var(--color-white);
+  font-size: var(--font-padrao-med);
+  padding-bottom: var(--space-1);
+  margin-bottom: var(--space-2);
+  border-bottom: 2px solid var(--color-primary-light);
+}
+
+/* Links no footer das páginas */
+
+#footer-principal a,
+#footer-cadastro a {
+  color: var(--color-white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin: 0 var(--space-1);
+  padding: var(--space-1) var(--space-2);
+}
+
+#footer-principal a:hover,
+#footer-cadastro a:hover {
+  color: var(--color-alert);
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: var(--space-1);
+}
+
+/* Paragrafos do footer das páginas */
+#footer-principal p,
+#footer-cadastro p {
+  margin: var(--space-2) 0;
+  line-height: 1.5;
+}
+
+/* footer de todas as páginas no celular */
+
+@media (max-width: 600px){
+  #footer-principal,
+  #footer-cadastro,
+  .rodape {
+    padding: var(--space-3);
+    font-size: var(--font-padrao-peq);
+  }
+
+  #footer-principal h3,
+  #footer-cadastro h3 {
+    font-size: var(--font-padrao-peq2);
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  #footer-principal,
+  #footer-cadastro,
+  .rodape {
+    padding: var(--space-4);
+    font-size: var(--font-padrao-med);
+  }
+}
