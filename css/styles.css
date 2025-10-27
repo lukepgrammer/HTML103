@@ -150,27 +150,46 @@ a {
   color: white;
   position: absolute;
   padding: 0;
-  top: 24px;
-  right: 24px;
+  top: var(--space-3);
+  right: var(--space-3);
   z-index: 100;
-  width: 32px;
-  height: 32px;
+  width: var(--space-4);
+  height: var(--space-4);
   align-items: center;
   justify-content: center;
   font-size: 2rem;
   cursor: pointer;
 }
 
+/* Menu hamburguer container */
 
+.nav-links {
+  transition: all 0.3s ease;
+  position: relative; /* Sem isso o menu não funciona por algum motivo */
+}
+
+@media (min-width: 769px){
+  .nav-links {
+    display: block !important;
+  }
+
+  .nav-links ul {
+    display: flex !important;
+    flex-direction: row;
+    position: static;
+    background: none;
+    box-shadow: none;
+  }
+}
 
 
 
 /* Responsividade media-queries - Breakpoints */
 
 
-/* Celulares */
+/* Celulares e Tablets */
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   body {
     font-size: var(--font-padrao-peq); /* 16px */
   }
@@ -186,15 +205,19 @@ a {
     pra tudo encaixar certinho, principalmente a parte que esconde o menu */
 
   .menu-toggle {
-    display: block;
+    display: flex !important;
     position: absolute;
-    top: 12px;
-    right: 16px;
+    top: 12px !important;
+    right: 16px !important;
     background: none;
     border: none;
     color: white;
     z-index: 50;
-    font-size: 1.9rem;
+    font-size: 1.9rem !important;
+    width: var(--space-4) !important;  /*Força a obedecer o layout*/
+    height: var(--space-4) !important;
+    text-align: center !important;
+    line-height: 1 !important;
   }
 /* Menu escondido */
   .nav-links ul {
@@ -211,13 +234,14 @@ a {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   }
 /* Menu ativo, mostrando as páginas */
-  .nav-links ul.show {
+  .nav-links.active ul {
     display: flex;
   }
 
   .nav-links ul li {
     width: 100%;
     margin: 0;
+    text-align: center;
   }
 
   .nav-links ul li a {
@@ -226,7 +250,7 @@ a {
     color: var(--color-white);
     font-weight: 600;
     text-align: center;
-    padding: 16px 0;
+    padding: var(--space-2) 0;
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
   }
 
@@ -334,52 +358,12 @@ a {
   }
 }
 
-/* Celulares com telas maiores */
-@media (min-width: 601px) and (max-width: 768px) {
-  body {
-    font-size: var(--font-padrao-peq2); /* 18px */
-  }
-
-  h1 {
-    font-size: var(--font-padrao-gra); /* 24px */
-    padding: var(--space-2);
-  }
-
-  nav ul {
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-  #texto-principal {
-    max-width: 90%;
-    font-size: var(--font-padrao-gra);
-    padding: var(--space-3);
-  }
-
-  .projetos-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards por linha */
-    gap: var(--space-2);
-  }
-
-  .cartao-projeto {
-    padding: var(--space-2);
-  }
-
-  section img,
-  picture img,
-  picture source {
-    width: 95%;
-    max-width: 700px;
-  }
-}
-
-/* Tablets -- Alguém usa isso em pleno século 2025? LOL*/
+/* Tablets 769px - 1024px */
 
 @media (min-width: 769px) and (max-width: 1024px) {
   h1 {
-    font-size: var(--font-padrao-gra); /* 24px */
+    font-size: var(--font-padrao-gra);
   }
-
   nav ul {
     flex-direction: row;
     justify-content: space-around;
@@ -391,18 +375,21 @@ a {
     padding: var(--space-4);
   }
 
-
   .Cartão {
     width: 80%;
     font-size: var(--font-padrao-med);
   }
-
-  section img,
-  picture img,
-  picture source {
-    width: 95%;
+  
+  /* Footer nos tablets */
+  #footer-principal,
+  #footer-cadastro,
+  .rodape {
+    padding: var(--space-4);
+    font-size: var(--font-padrao-med);
   }
+
 }
+
 
 /* PCs e Desktops*/
 
@@ -501,7 +488,6 @@ nav ul li a {
 }
 
 h1 {
-  /* Não sei o que eu fiz aqui, mas consegui deixar o "logo" e a frase encaixados certinhos */
   background: var(--color-secondary-alt);
   color: white;
   font-size: var(--font-padrao-giga);
@@ -804,7 +790,7 @@ a tag !important garante que as regras sejam priorizadas acima de tudo
   line-height: 1 !important;
 }
 
-@media (max-width: 600px){
+@media (max-width: 768px){
   .navbar .menu-toggle {
     display: block !important;
     top: 12px !important;
