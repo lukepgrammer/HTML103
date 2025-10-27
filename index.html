@@ -1,66 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ONG Eldermaxxing</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/main.js"></script>
-    <link rel="icon" type="image/icon" href="imagens/favicon.ico">
-</head>
-<body>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" type="image/icon" href="imagens/favicon.ico" />
+  </head>
+  <body>
     <header class="navbar">
-        <h1>Bem-vindos a ONG Eldermaxxing</h1>
-        <em class="frase-legal">Por um envelhecimento com afeto e saúde</em>
-        
-        <!--- Menu Hamburguer -->
-        <button class="menu-toggle" aria-label="Abrir menu">☰</button>
-        <nav class="nav-links">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
-                <li><a href="teste.html">Página de testes</a></li>
-            </ul>
-        </nav>
+      <h1>Bem-vindos a ONG Eldermaxxing</h1>
+      <em class="frase-legal">Por um envelhecimento com afeto e saúde</em>
+
+      <!--- Menu Hamburguer -->
+      <button
+        class="menu-toggle"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="nav-links"
+      >
+        ☰
+      </button>
+      <nav class="nav-links" id="nav-links">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+          <li><a href="teste.html">Página de testes</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <section>
-            <p id="texto-principal">
-            A Eldermaxxing é uma ONG dedicada a promover o <mark>envelhecimento saudável</mark> e ativo para pessoas idosas. 
-            Acreditamos que todos merecem viver uma vida plena e satisfatória, independentemente da idade.
+      <section>
+        <p id="texto-principal">
+          A Eldermaxxing é uma ONG dedicada a promover o
+          <mark>envelhecimento saudável</mark> e ativo para pessoas idosas.
+          Acreditamos que todos merecem viver uma vida plena e satisfatória,
+          independentemente da idade.
 
-            <br><br>
-            Na ElderMaxxing, nosso compromisso é proporcionar uma experiência de vida plena e saudável para a terceira idade. 
-            Acreditamos que cada pessoa merece cuidado, atenção e carinho, promovendo bem-estar físico, mental e emocional. 
-            Por meio de atividades físicas adaptadas, oficinas de leitura, artes, e programas de socialização, incentivamos hábitos saudáveis e estimulantes que fortalecem corpo e mente. 
-            Nosso objetivo é criar um ambiente acolhedor onde os idosos se sintam valorizados, motivados e integrados à comunidade, celebrando a experiência de vida com alegria, 
-            autonomia e dignidade.
-            </p>
-            <br>
-            <picture>
-                <source media="(max-width: 600px)" srcset="imagens/cuidador_idosos_2.jpg">
-                <!--o atributo alt não pode ser usado dentro do elemento source pois ela não exibe a imagem, apenas informa a largura ao navegador-->
-                <img src="imagens/Idosos_principal.png" alt="grupo de idosos sorrindo e fazendo joinha" loading="lazy">
-                <!--o atributo alt deve ser sempre colocado na tag img-->
-            </picture>
-            <br>
-        </section>
+          <br /><br />
+          Na ElderMaxxing, nosso compromisso é proporcionar uma experiência de
+          vida plena e saudável para a terceira idade. Acreditamos que cada
+          pessoa merece cuidado, atenção e carinho, promovendo bem-estar físico,
+          mental e emocional. Por meio de atividades físicas adaptadas, oficinas
+          de leitura, artes, e programas de socialização, incentivamos hábitos
+          saudáveis e estimulantes que fortalecem corpo e mente. Nosso objetivo
+          é criar um ambiente acolhedor onde os idosos se sintam valorizados,
+          motivados e integrados à comunidade, celebrando a experiência de vida
+          com alegria, autonomia e dignidade.
+        </p>
+        <br />
+        <picture>
+          <source
+            media="(max-width: 600px)"
+            srcset="imagens/cuidador_idosos_2.jpg"
+          />
+          <!--o atributo alt não pode ser usado dentro do elemento source pois ela não exibe a imagem, apenas informa a largura ao navegador-->
+          <img
+            src="imagens/Idosos_principal.png"
+            alt="grupo de idosos sorrindo e fazendo joinha"
+            loading="lazy"
+          />
+          <!--o atributo alt deve ser sempre colocado na tag img-->
+        </picture>
+        <br />
+      </section>
 
-        <section>
-            <footer id="footer-principal">
-                <h3>Contato</h3>
-                <a href="https://www.youtube.com/watch?v=i8ju_10NkGY">eldermaxxing@contato.org.br</a>
-                <br>
-                <br>
-                    Endereço: Rua Terceira Idade, 123 - Cidade da Longevidade, RJ - Brasil
-                <br>
-                <p>
-                    &copy; 2025 ONG Eldermaxxing. Todos os direitos reservados.
-                </p>
-            </footer>
-        </section>
+      <section>
+        <footer id="footer-principal">
+          <h3>Contato</h3>
+          <a href="https://www.youtube.com/watch?v=i8ju_10NkGY"
+            >eldermaxxing@contato.org.br</a
+          >
+          <br />
+          <br />
+          Endereço: Rua Terceira Idade, 123 - Cidade da Longevidade, RJ - Brasil
+          <br />
+          <p>&copy; 2025 ONG Eldermaxxing. Todos os direitos reservados.</p>
+        </footer>
+      </section>
     </main>
-</body>
+    <script src="js/main.js"></script>
+  </body>
 </html>
