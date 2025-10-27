@@ -118,7 +118,7 @@ section img {
   display: block;
   margin: var(--space-4) auto;
   max-width: 60ch;
-  padding: var(--space4);
+  padding: var(--space-4);
   color: #1a1a1a;
   font-size: var(--font-padrao-gra);
   font-family: "Segoi UI", sans-serif;
