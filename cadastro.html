@@ -27,11 +27,11 @@
         srcset="imagens/idoso_atendimento_1.jpg"
         />
         <source
-        media="(min-width: 700px)"
+        media="(min-width: 600px)"
         srcset="imagens/idoso_atendimento_2.jpg"
         />
         <source
-        media="(min-width: 600px)"
+        media="(min-width: 700px)"
         srcset="imagens/idoso_atendimento_3.webp"
         />
         <img
@@ -121,39 +121,37 @@
             <select
             id="estado"
             name="estado"
-            type="text"
             required
-            maxlength="2"
             autocomplete="address-level1"
             >
             <option value="">Selecione o seu Estado</option>
             <option value="SP">SP</option>
             <option value="RJ">RJ</option>
             <option value="AC">AC</option>
-            <option value="AC">AL</option>
-            <option value="AC">AP</option>
-            <option value="AC">AM</option>
-            <option value="AC">BA</option>
-            <option value="AC">CE</option>
-            <option value="AC">DF</option>
-            <option value="AC">ES</option>
-            <option value="AC">GO</option>
-            <option value="AC">MA</option>
-            <option value="AC">MT</option>
-            <option value="AC">MS</option>
-            <option value="AC">MG</option>
-            <option value="AC">PA</option>
-            <option value="AC">PB</option>
-            <option value="AC">PR</option>
-            <option value="AC">PE</option>
-            <option value="AC">PI</option>
-            <option value="AC">RN</option>
-            <option value="AC">RS</option>
-            <option value="AC">RO</option>
-            <option value="AC">RR</option>
-            <option value="AC">SC</option>
-            <option value="AC">SE</option>
-            <option value="AC">TO</option>
+            <option value="AL">AL</option>
+            <option value="AP">AP</option>
+            <option value="AM">AM</option>
+            <option value="BA">BA</option>
+            <option value="CE">CE</option>
+            <option value="DF">DF</option>
+            <option value="ES">ES</option>
+            <option value="GO">GO</option>
+            <option value="MA">MA</option>
+            <option value="MT">MT</option>
+            <option value="MS">MS</option>
+            <option value="MG">MG</option>
+            <option value="PA">PA</option>
+            <option value="PB">PB</option>
+            <option value="PR">PR</option>
+            <option value="PE">PE</option>
+            <option value="PI">PI</option>
+            <option value="RN">RN</option>
+            <option value="RS">RS</option>
+            <option value="RO">RO</option>
+            <option value="RR">RR</option>
+            <option value="SC">SC</option>
+            <option value="SE">SE</option>
+            <option value="TO">TO</option>
           </select>
           
           <label for="cidade">Cidade</label>
@@ -186,11 +184,12 @@
           placeholder="Digite aqui sua sugestão"
           ></textarea>
           <div style="margin-top: 12px">
-            <button type="submit">Cadastrar</button>
-            <button type="reset">Limpar</button>
+            <button type="submit" id="btnCadastrar">Cadastrar</button>
+            <button type="reset" id="btnLimpar">Limpar</button>
           </div>
         </fieldset>
       </form>
+      <div id="messagebox"></div>
     </section>
   </main>
   

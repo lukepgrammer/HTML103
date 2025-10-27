@@ -27,7 +27,7 @@
 
   /* Cores secundárias */
 
-  --color-secondary: rgb(86, 142, 277); /* highlight texto */
+  --color-secondary: rgb(86, 142, 255); /* highlight texto */
   --color-alert: #d64545; /* Input inválido no campo do formulário */
   --color-border-hover: rgb(137, 146, 152); /* bordas ao usar o hover */
   --color-secondary-alt: rgb(25, 115, 233); /* nav background */
@@ -547,7 +547,7 @@ form {
 
 fieldset {
   border: none;
-  padding: auto;
+  padding: 0;
   margin: auto;
   margin-right: 20px;
 }
@@ -723,7 +723,7 @@ button[type="reset"] {
 .Cartão-titulo {
   font-size: var(--font-padrao-peq2);
   text-transform: uppercase;
-  font-weight: 300px;
+  font-weight: 300;
   margin: 0 auto;
   padding: var(--space-1);
   letter-spacing: 2.5px;
@@ -869,4 +869,46 @@ a tag !important garante que as regras sejam priorizadas acima de tudo
     padding: var(--space-4);
     font-size: var(--font-padrao-med);
   }
+}
+
+/* DOM do formulário - Área de Cadastro */
+#messagebox {
+  position: fixed;
+  bottom: var(--space-3);
+  right: var(--space-3);
+  background-color: var(--color-white);
+  border-left: 5px solid;
+  border-radius: var(--space-1);
+  padding: 12px 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition:  opacity 0.3s ease, transform 0.3s ease;
+  z-index: 9999;
+}
+
+#messagebox.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-10px);
+}
+
+#messagebox.success {
+  border-color: #4caf50;
+  color: #2e7d32;
+  background-color: #e8f5e9;
+}
+
+#messagebox.error {
+  border-color: #f44336;
+  color: #c62828;
+  background-color: #ffebee;
+}
+
+#messagebox .icon {
+  font-size: var(--font-padrao-med);
+  font-weight: bold;
 }
