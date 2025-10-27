@@ -1,11 +1,11 @@
 console.log('Hello world!');
 // COMENTÁRIOS FEITO DO JEITO CERTO AEHOOOOOOOO
 
-// Espera o DOM carregar antes de manipular elementos
+// Pelo que eu entendi, é necessário carregar o DOM antes de mexer nos elementos
 document.addEventListener('DOMContentLoaded', function () {
 
     /* ==========================
-       MENU HAMBÚRGUER - MOBILE
+            MENU HAMBÚRGUER
     ========================== */
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById("formCadastro");
     const messageBox = document.getElementById("messagebox");
 
-    // Função para mostrar mensagens temporárias
+    // Mostra mensagens temporárias
     function mostrarMensagem(message, type) {
         messageBox.className = "";
         messageBox.classList.add("show", type);
@@ -75,3 +75,47 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
+
+
+/* 
+===================================
+TEMPLATES COM JAVASCRIPT
+
+Achei meio retardado isso aqui, mas
+já que a atividade pede...
+==================================
+*/
+
+const projetos = [
+  {
+    titulo: "Programa de Atividades Físicas",
+    descricao: "Oferecemos aulas de exercícios físicos adaptados para idosos, promovendo a saúde cardiovascular, força muscular e flexibilidade."
+  },
+  {
+    titulo: "Oficinas de Nutrição",
+    descricao: "Realizamos workshops sobre alimentação saudável, ensinando receitas nutritivas e práticas para melhorar a dieta dos idosos."
+  },
+  {
+    titulo: "Grupos de Apoio Emocional",
+    descricao: "Criamos grupos de apoio onde os idosos podem compartilhar suas experiências, fortalecer vínculos sociais e receber suporte emocional."
+  },
+  {
+    titulo: "Atividades Culturais e Recreativas",
+    descricao: "Organizamos eventos culturais, passeios e atividades recreativas para estimular a mente e promover a socialização entre os participantes."
+  },
+  {
+    titulo: "Palestras e Workshops Educativos",
+    descricao: "Oferecemos palestras sobre temas relevantes para o envelhecimento, como saúde mental, prevenção de doenças e direitos dos idosos."
+  }
+];
+
+
+const container = document.getElementById("projetos-grid");
+
+// (Promete gerar rsrs) Gera os cards dinamicamente
+container.innerHTML = projetos.map(p => `
+  <article class="cartao-projeto">
+    <h3 class="Cartão-subtitulo">${p.titulo}</h3>
+    <p class="Cartão-texto">${p.descricao}</p>
+  </article>
+`).join('');
