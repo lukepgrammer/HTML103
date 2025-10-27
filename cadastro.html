@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" />
-    <script src="js/main.js"></script>
     <link rel="icon" type="image/icon" href="imagens/favicon.ico">
     <title>Cadastro | Eldermaxxing</title>
   </head>
@@ -24,27 +23,27 @@
       <br />
       <picture>
         <source
-          media="(max-width: 500px)"
-          srcset="imagens/idoso_atendimento_1.jpg"
+        media="(max-width: 500px)"
+        srcset="imagens/idoso_atendimento_1.jpg"
         />
         <source
-          media="(min-width: 700px)"
-          srcset="imagens/idoso_atendimento_2.jpg"
+        media="(min-width: 700px)"
+        srcset="imagens/idoso_atendimento_2.jpg"
         />
         <source
-          media="(min-width: 600px)"
-          srcset="imagens/idoso_atendimento_3.webp"
+        media="(min-width: 600px)"
+        srcset="imagens/idoso_atendimento_3.webp"
         />
         <img
-          src="imagens/idoso_atendimento_standard.jpg"
-          alt="idoso sendo atendido por uma profissional de saúde"
-          loading="lazy"
+        src="imagens/idoso_atendimento_standard.jpg"
+        alt="idoso sendo atendido por uma profissional de saúde"
+        loading="lazy"
         />
       </picture>
       <br />
       <section>
         <h3 style="text-align: center; color: var(--color-primary-dark);">Área de formulário</h3> <!-- A propriedade style sobrepoe as regras dos seletores -->
-                                                                <!-- Só uma gambiarra porque eu quebrei a centralização do titulo -->
+        <!-- Só uma gambiarra porque eu quebrei a centralização do titulo -->
         <p style="font-size: 20px; color: black; text-align: center">
           Seja bem-vindo ao formulário de voluntários da ONG Eldermaxxing!
           Estamos felizes em saber que você deseja se juntar a nós na missão de
@@ -54,60 +53,60 @@
           atividades e projetos.
         </p>
         <br />
-
+        
         <p style="font-size: 18px; color: rgb(192, 15, 15); text-align: center">
           *Todos os campos são obrigatórios
         </p>
-
+        
         <!--Não sei se fará diferença, mas coloquei mais opções de gênero visando uma plataforma mais inclusiva e moderna-->
-
+        
         <form id="formCadastro" action="#" method="post" novalidate>
           <fieldset>
             <legend>Voluntários - ONG Eldermaxxing</legend>
-
+            
             <label for="nome">Nome Completo</label>
             <input
-              id="nome"
-              name="nome"
-              type="text"
-              required
-              autocomplete="name"
-              placeholder="Digite seu nome"
+            id="nome"
+            name="nome"
+            type="text"
+            required
+            autocomplete="name"
+            placeholder="Digite seu nome"
             />
-
+            
             <label for="cpf">CPF</label>
             <input
-              id="cpf"
-              name="cpf"
-              type="text"
-              inputmode="numeric"
-              maxlength="14"
-              placeholder="000.000.000-00"
-              pattern="\d{3}\.\d{3}\.d{3}-\{2}"
-              required
+            id="cpf"
+            name="cpf"
+            type="text"
+            inputmode="numeric"
+            maxlength="14"
+            placeholder="000.000.000-00"
+            pattern="\d{3}\.\d{3}\.d{3}-\{2}"
+            required
             />
-
+            
             <label for="email">E-mail</label>
             <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              autocomplete="email"
-              placeholder="email@domínio.com"
+            id="email"
+            name="email"
+            type="email"
+            required
+            autocomplete="email"
+            placeholder="email@domínio.com"
             />
-
+            
             <label for="idade">Idade</label>
             <input
-              id="idade"
-              name="idade"
-              type="number"
-              min="18"
-              max="50"
-              required
-              placeholder="Idade miníma: 18 anos"
+            id="idade"
+            name="idade"
+            type="number"
+            min="18"
+            max="50"
+            required
+            placeholder="Idade miníma: 18 anos"
             />
-
+            
             <br />
             <label for="genero">Gênero</label>
             <select id="genero" name="genero" required>
@@ -117,87 +116,88 @@
               <option value="outro">Outro</option>
               <option value="nao_informar">Prefiro não informar</option>
             </select>
-
+            
             <label for="estado">Estado</label>
             <select
-              id="estado"
-              name="estado"
-              type="text"
-              required
-              maxlength="2"
-              autocomplete="address-level1"
+            id="estado"
+            name="estado"
+            type="text"
+            required
+            maxlength="2"
+            autocomplete="address-level1"
             >
-              <option value="">Selecione o seu Estado</option>
-              <option value="SP">SP</option>
-              <option value="RJ">RJ</option>
-              <option value="AC">AC</option>
-              <option value="AC">AL</option>
-              <option value="AC">AP</option>
-              <option value="AC">AM</option>
-              <option value="AC">BA</option>
-              <option value="AC">CE</option>
-              <option value="AC">DF</option>
-              <option value="AC">ES</option>
-              <option value="AC">GO</option>
-              <option value="AC">MA</option>
-              <option value="AC">MT</option>
-              <option value="AC">MS</option>
-              <option value="AC">MG</option>
-              <option value="AC">PA</option>
-              <option value="AC">PB</option>
-              <option value="AC">PR</option>
-              <option value="AC">PE</option>
-              <option value="AC">PI</option>
-              <option value="AC">RN</option>
-              <option value="AC">RS</option>
-              <option value="AC">RO</option>
-              <option value="AC">RR</option>
-              <option value="AC">SC</option>
-              <option value="AC">SE</option>
-              <option value="AC">TO</option>
-            </select>
-
-            <label for="cidade">Cidade</label>
-            <input
-              id="cidade"
-              name="cidade"
-              type="text"
-              required
-              placeholder="Sua cidade"
-            />
-            <label for="cep">CEP</label>
-            <input
-              id="cep"
-              name="cep"
-              type="text"
-              inputmode="numeric"
-              maxlength="9"
-              placeholder="000000-000"
-              pattern="\d{5}-\d{3}"
-              required
-            />
-
-            <label for="sugestao"
-              >Gostaria de sugerir algum projeto á ONG?</label
-            >
-            <textarea
-              id="sugestao"
-              name="sugestao"
-              rows="4"
-              placeholder="Digite aqui sua sugestão"
-            ></textarea>
-            <div style="margin-top: 12px">
-              <button type="submit">Cadastrar</button>
-              <button type="reset">Limpar</button>
-            </div>
-          </fieldset>
-        </form>
-      </section>
-    </main>
-
-    <br />
-    <footer id="footer-cadastro">
-      &copy; 2025 ONG Eldermaxxing | Todos os direitos reservados.
-    </footer>
-  </body>
+            <option value="">Selecione o seu Estado</option>
+            <option value="SP">SP</option>
+            <option value="RJ">RJ</option>
+            <option value="AC">AC</option>
+            <option value="AC">AL</option>
+            <option value="AC">AP</option>
+            <option value="AC">AM</option>
+            <option value="AC">BA</option>
+            <option value="AC">CE</option>
+            <option value="AC">DF</option>
+            <option value="AC">ES</option>
+            <option value="AC">GO</option>
+            <option value="AC">MA</option>
+            <option value="AC">MT</option>
+            <option value="AC">MS</option>
+            <option value="AC">MG</option>
+            <option value="AC">PA</option>
+            <option value="AC">PB</option>
+            <option value="AC">PR</option>
+            <option value="AC">PE</option>
+            <option value="AC">PI</option>
+            <option value="AC">RN</option>
+            <option value="AC">RS</option>
+            <option value="AC">RO</option>
+            <option value="AC">RR</option>
+            <option value="AC">SC</option>
+            <option value="AC">SE</option>
+            <option value="AC">TO</option>
+          </select>
+          
+          <label for="cidade">Cidade</label>
+          <input
+          id="cidade"
+          name="cidade"
+          type="text"
+          required
+          placeholder="Sua cidade"
+          />
+          <label for="cep">CEP</label>
+          <input
+          id="cep"
+          name="cep"
+          type="text"
+          inputmode="numeric"
+          maxlength="9"
+          placeholder="000000-000"
+          pattern="\d{5}-\d{3}"
+          required
+          />
+          
+          <label for="sugestao"
+          >Gostaria de sugerir algum projeto á ONG?</label
+          >
+          <textarea
+          id="sugestao"
+          name="sugestao"
+          rows="4"
+          placeholder="Digite aqui sua sugestão"
+          ></textarea>
+          <div style="margin-top: 12px">
+            <button type="submit">Cadastrar</button>
+            <button type="reset">Limpar</button>
+          </div>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+  
+  <br />
+  <footer id="footer-cadastro">
+    &copy; 2025 ONG Eldermaxxing | Todos os direitos reservados.
+  </footer>
+  <script src="js/main.js"></script> <!-- Ouvi dizer que num mundo civilizado as pessoas colocam o script no final e não no head-->
+</body>
 </html>
